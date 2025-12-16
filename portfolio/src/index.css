@@ -1,0 +1,45 @@
+:root {
+  /* Your Palette */
+  --color-blue-grey: #B7C4CF;
+  --color-cream: #EEE3CB;
+  --color-beige: #D7C0AE;
+  --color-brown: #967E76;
+
+  /* Usage Mapping */
+  --bg-main: var(--color-cream);
+  --bg-card: var(--color-blue-grey);
+  --text-primary: var(--color-brown);
+  --text-secondary: #5d4e49; /* Darker version of your brown for readability */
+  --accent: var(--color-beige);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* Utilities */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.btn {
+  background-color: var(--text-primary);
+  color: var(--color-cream);
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+.btn:hover {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+}
