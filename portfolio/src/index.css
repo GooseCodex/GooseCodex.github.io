@@ -1,16 +1,14 @@
 :root {
-  /* Your Palette */
-  --color-blue-grey: #B7C4CF;
-  --color-cream: #EEE3CB;
-  --color-beige: #D7C0AE;
-  --color-brown: #967E76;
-
-  /* Usage Mapping */
-  --bg-main: var(--color-cream);
-  --bg-card: var(--color-blue-grey);
-  --text-primary: var(--color-brown);
-  --text-secondary: #5d4e49; /* Darker version of your brown for readability */
-  --accent: var(--color-beige);
+  --color-light-cream: #FAF8F1;
+  --color-gold-beige: #FAEAB1;
+  --color-muted-teal: #34656D;
+  --color-dark-charcoal: #334443;
+  
+  --bg-main: var(--color-dark-charcoal);       /* Main background is the darkest color */
+  --bg-card: var(--color-muted-teal);          /* Card background is the second dark color */
+  --text-primary: var(--color-light-cream);    /* Main text is the lightest color for contrast */
+  --text-secondary: var(--color-gold-beige);   /* Gold/Beige for secondary text/highlights */
+  --accent: var(--color-gold-beige);           /* Gold/Beige for interactive highlights */
 }
 
 body {
@@ -29,8 +27,8 @@ body {
 }
 
 .btn {
-  background-color: var(--text-primary);
-  color: var(--color-cream);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
   padding: 0.6em 1.2em;
   border-radius: 8px;
   text-decoration: none;
@@ -40,6 +38,6 @@ body {
 }
 .btn:hover {
   background-color: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--text-primary);
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }

@@ -1,68 +1,43 @@
 import React from 'react'
 import './App.css'
+import ContactForm from './components/ContactForm.jsx'
+// NOTE: Make sure your index.css (or whichever file holds the :root colors) is still linked in index.html
 
 // Placeholder Data - Replace this later!
+// NOTE: I added back 'tech' and 'desc' so the card is complete.
 const projects = [
-    { id: 1, title: "Project Alpha", tech: "React • Node.js", desc: "A dashboard for tracking coffee consumption.", gif: "https://via.placeholder.com/400x200/967E76/EEE3CB?text=Project+1+GIF" },
-    { id: 2, title: "Project Beta", tech: "Python • AI", desc: "An AI that generates color palettes.", gif: "https://via.placeholder.com/400x200/967E76/EEE3CB?text=Project+2+GIF" },
-    { id: 3, title: "Project Gamma", tech: "HTML • CSS", desc: "My first static website clone.", gif: "https://via.placeholder.com/400x200/967E76/EEE3CB?text=Project+3+GIF" }
+    {
+        id: 1,
+        title: "OpenPOS",
+        tech: ".NET Maui",
+        desc: "A modern, point-of-sale system for small businesses.",
+        image: "/openpos_logo_v1.png", // NOTE: The path should start with / if using public folder
+        repo:"https://github.com/ICTOOSDDd4/OpenPOS"
+    }
 ];
 
 function App() {
-    const styles = {
-        header: {
-            textAlign: 'center',
-            padding: '4rem 0',
-        },
-        avatar: {
-            width: '150px',
-            height: '150px',
-            borderRadius: '50%',
-            border: '4px solid var(--text-primary)',
-            objectFit: 'cover',
-            marginBottom: '1rem'
-        },
-        grid: {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2rem',
-            marginTop: '2rem'
-        },
-        card: {
-            backgroundColor: 'var(--bg-card)',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-            transition: 'transform 0.2s ease-in-out'
-        },
-        cardImg: {
-            width: '100%',
-            height: '200px',
-            objectFit: 'cover',
-            display: 'block'
-        },
-        cardContent: {
-            padding: '1.5rem',
-            color: 'var(--text-secondary)'
-        }
-    };
+    // 1. Removed the 'styles' object entirely!
 
     return (
         <div className="container">
             {/* Hero Section */}
-            <header style={styles.header}>
+            {/* 2. Replaced style={styles.header} with className="header" */}
+            <header className="header">
                 <img
-                    src="https://via.placeholder.com/150/967E76/EEE3CB?text=Me"
+                    // 3. Replaced style={styles.avatar} with className="avatar"
+                    src="/profile-p.jpg"
                     alt="Profile"
-                    style={styles.avatar}
+                    className="avatar"
                 />
                 <h1 style={{fontSize: '3rem', margin: '0.5rem 0'}}>GooseCodex</h1>
                 <p style={{fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto'}}>
-                    Full Stack Developer. Building digital experiences with an earthy touch.
+                    Web Developer
                 </p>
-                <div style={{marginTop: '1.5rem', display: 'flex', gap: '1rem', justifyContent: 'center'}}>
-                    <a href="#" className="btn">GitHub</a>
-                    <a href="#" className="btn">LinkedIn</a>
+                {/* 4. Replaced inline flex with className="social-links" */}
+                <div className="social-links">
+                    <a href="https://github.com/GooseCodex" className="btn">GitHub</a>
+                    <a href="https://www.linkedin.com/in/guus-van-der-snel-631818266/" className="btn">LinkedIn</a>
                 </div>
             </header>
 
@@ -71,22 +46,37 @@ function App() {
             {/* Projects Section */}
             <main>
                 <h2 style={{marginTop: '3rem', color: 'var(--text-primary)'}}>Selected Works</h2>
-                <div style={styles.grid}>
+                {/* 5. Replaced style={styles.grid} with className="project-grid" */}
+                <div className="project-grid">
                     {projects.map((project) => (
-                        <div key={project.id} style={styles.card} className="project-card">
-                            <img src={project.gif} alt={project.title} style={styles.cardImg} />
-                            <div style={styles.cardContent}>
-                                <h3 style={{margin: '0 0 0.5rem 0', color: 'var(--text-primary)'}}>{project.title}</h3>
-                                <small style={{fontWeight: 'bold', color: 'var(--text-primary)', opacity: 0.8}}>{project.tech}</small>
+                        // 6. Replaced style={styles.card} with className="project-card"
+                        <div key={project.id} className="project-card">
+                            {/* NEW: Image container for 16:9 ratio */}
+                            <div className="image-container">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="project-image"
+                                />
+                            </div>
+
+                            {/* 7. Replaced style={styles.cardContent} with className="card-content" */}
+                            <div className="card-content">
+                                <h3 className="card-title">{project.title}</h3>
+                                {/* 8. Replaced style={...} with className="tech-stack" */}
+                                <small className="tech-stack">{project.tech}</small>
                                 <p>{project.desc}</p>
-                                <a href="#" className="btn" style={{fontSize: '0.8rem', padding: '0.4rem 0.8rem'}}>View Code</a>
+                                {/* 9. Applied new utility class btn-small */}
+                                <a href={project.repo} className="btn btn-small">View Code</a>
                             </div>
                         </div>
                     ))}
                 </div>
             </main>
 
-            <footer style={{textAlign: 'center', marginTop: '4rem', opacity: 0.6}}>
+            <ContactForm />
+            
+            <footer>
                 <p>© 2025 GooseCodex. Built with React.</p>
             </footer>
         </div>
