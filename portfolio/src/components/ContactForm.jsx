@@ -2,16 +2,13 @@
 import '../App.css'; // Use App.css styles
 
 function ContactForm() {
-    // You can manage form state here for advanced validation, but for simplicity, 
-    // we'll let Formspree handle the submission directly via the 'action' attribute.
-
+    
     return (
         <section style={{ margin: '4rem 0', padding: '2rem 0', borderTop: '1px solid var(--accent)' }}>
             <h2 className="card-title" style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '2rem' }}>
                 Get In Touch
             </h2>
 
-            {/* The action URL is where Formspree will send your form data */}
             <form
                 action="https://formspree.io/f/manrgovk"
                 method="POST"
