@@ -2,7 +2,6 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 /* --- General Styles --- */
@@ -48,6 +47,7 @@
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
+  text-align: center;
 }
 
 .project-card:hover {
@@ -118,13 +118,21 @@
 
 /* --- Contact Form Styles --- */
 .contact-form-grid {
+  /* Default Mobile (Single Column) */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr; /* On mobile, everything stacks */
   gap: 1.5rem;
   background-color: var(--bg-card);
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop/Tablet Layout (Apply two columns above a certain width) */
+@media (min-width: 650px) {
+  .contact-form-grid {
+    grid-template-columns: 1fr 1fr; /* On wider screens, name and email go side-by-side */
+  }
 }
 
 .contact-form-grid label {
@@ -151,6 +159,26 @@
 .contact-form-grid textarea:focus {
   outline: none;
   border-color: var(--accent);
+}
+
+.submit-btn {
+  /* Mobile Default: Centered, wider, and slightly larger for easy tapping */
+  grid-column: 1 / -1; /* Make it span the full width (important for mobile stacking) */
+  width: 90%;          /* Make it wider than 'fit-content' for easier tapping */
+  justify-self: center; /* Center the button within its container */
+  padding: 0.8em 1.5em; /* Make the button a little bigger */
+}
+
+
+/* Desktop/Tablet Override (min-width: 650px) */
+@media (min-width: 650px) {
+  .submit-btn {
+    /* Revert to single column span and align right */
+    grid-column: 2 / 3;      /* Place the button in the second grid column */
+    justify-self: end;       /* Align the button to the right of its column */
+    width: fit-content;      /* Let the button shrink to fit its text */
+    padding: 0.6em 1.2em;    /* Revert to original desktop size */
+  }
 }
 
 /* --- Footer --- */

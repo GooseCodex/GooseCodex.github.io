@@ -33,7 +33,7 @@ function ContactForm() {
                 </div>
 
                 {/* Submit Button */}
-                <button type="submit" className="btn" style={{ gridColumn: '1 / -1', marginTop: '1rem', width: 'fit-content', justifySelf: 'center' }}>
+                <button type="submit" className="btn submit-btn">
                     Send Message
                 </button>
             </form>
