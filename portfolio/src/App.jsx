@@ -30,8 +30,8 @@ function App() {
                     Web Developer
                 </p>
                 <div className="social-links">
-                    <a href="https://github.com/GooseCodex" className="btn">GitHub</a>
-                    <a href="https://www.linkedin.com/in/guus-van-der-snel-631818266/" className="btn">LinkedIn</a>
+                    <a href="https://github.com/GooseCodex" target="_blank" className="btn">GitHub</a>
+                    <a href="https://www.linkedin.com/in/guus-van-der-snel-631818266/" target="_blank" className="btn">LinkedIn</a>
                 </div>
             </header>
 
@@ -55,7 +55,7 @@ function App() {
                                 <h3 className="card-title">{project.title}</h3>
                                 <small className="tech-stack">{project.tech}</small>
                                 <p>{project.desc}</p>
-                                <a href={project.repo} className="btn btn-small">View Code</a>
+                                <a href={project.repo} target="_blank" className="btn btn-small">View Code</a>
                             </div>
                         </div>
                     ))}
