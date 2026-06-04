@@ -1,43 +1,20 @@
-:root {
-  --color-light-cream: #FAF8F1;
-  --color-gold-beige: #FAEAB1;
-  --color-muted-teal: #34656D;
-  --color-dark-charcoal: #334443;
-  
-  --bg-main: var(--color-dark-charcoal);       /* Main background is the darkest color */
-  --bg-card: var(--color-muted-teal);          /* Card background is the second dark color */
-  --text-primary: var(--color-light-cream);    /* Main text is the lightest color for contrast */
-  --text-secondary: var(--color-gold-beige);   /* Gold/Beige for secondary text/highlights */
-  --accent: var(--color-gold-beige);           /* Gold/Beige for interactive highlights */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  background: #03031e;
+  color: #d0e4ff;
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-primary);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Utilities */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.btn {
-  background-color: var(--bg-card);
-  color: var(--text-primary);
-  padding: 0.6em 1.2em;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  border: 1px solid transparent;
-  transition: border-color 0.25s;
-}
-.btn:hover {
-  background-color: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
+#root {
+  min-height: 100vh;
 }

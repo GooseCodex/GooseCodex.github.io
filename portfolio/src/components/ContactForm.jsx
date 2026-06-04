@@ -1,43 +1,37 @@
-﻿import React from 'react';
-import '../App.css'; // Use App.css styles
+import React from 'react';
+import '../App.css';
 
 function ContactForm() {
-    
     return (
-        <section style={{ margin: '4rem 0', padding: '2rem 0', borderTop: '1px solid var(--accent)' }}>
-            <h2 className="card-title" style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '2rem' }}>
-                Get In Touch
-            </h2>
+        <>
+            <h2 className="ps2-section-heading">GET IN TOUCH</h2>
 
             <form
                 action="https://formspree.io/f/manrgovk"
                 method="POST"
-                className="contact-form-grid"
+                className="ps2-contact-form"
             >
-                {/* Name Field */}
-                <div>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" required />
+                <div className="ps2-form-row">
+                    <div className="ps2-form-field">
+                        <label htmlFor="name">NAME</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div className="ps2-form-field">
+                        <label htmlFor="email">EMAIL</label>
+                        <input type="email" id="email" name="_replyto" required />
+                    </div>
                 </div>
 
-                {/* Email Field */}
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="_replyto" required />
-                </div>
-
-                {/* Message Field */}
-                <div style={{ gridColumn: '1 / -1' }}> {/* Span across both columns */}
-                    <label htmlFor="message">Message</label>
+                <div className="ps2-form-field">
+                    <label htmlFor="message">MESSAGE</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
 
-                {/* Submit Button */}
-                <button type="submit" className="btn submit-btn">
-                    Send Message
+                <button type="submit" className="ps2-link-btn ps2-submit-btn">
+                    <span style={{ color: 'var(--ps2-circle)' }}>○</span> SEND MESSAGE
                 </button>
             </form>
-        </section>
+        </>
     );
 }
 
