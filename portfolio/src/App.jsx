@@ -28,7 +28,7 @@ const projects = [
         tech: ["C#", ".NET 10", "Avalonia 11", "Azure IoT Hub", "SSH / MQTT"],
         license: "Proprietary",
         gif: '/qpid-demo.gif',
-        desc: "A self-contained Windows tray application that streams live BMS datapoint change events to Azure IoT Hub. Built during a professional internship at Qanteon, Q-PID bridges on-site Linux BMS installations to cloud IoT infrastructure through a resilient, secure, and fully configurable pipeline.",
+        desc: "A self-contained Windows tray application that streams live BMS datapoint change events to Azure IoT Hub. Built during a professional internship at Kieback&Peter, Q-PID bridges on-site Linux BMS installations to cloud IoT infrastructure through a resilient, secure, and fully configurable pipeline.",
         details: [
             "Connects to Linux BMS VMs over SSH, runs DPfilter remotely and parses BACnet and LON protocol change events from stdout",
             "Entra ID device-code authentication with Infisical OIDC session — no secrets written to disk at any point",
