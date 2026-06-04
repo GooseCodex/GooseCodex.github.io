@@ -28,7 +28,7 @@ function ContactForm() {
                 </div>
 
                 <button type="submit" className="ps2-link-btn ps2-submit-btn">
-                    <span style={{ color: 'var(--ps2-circle)' }}>○</span> SEND MESSAGE
+                    <span style={{ color: 'var(--ps2-circle)' }}>◯</span> SEND MESSAGE
                 </button>
             </form>
         </>

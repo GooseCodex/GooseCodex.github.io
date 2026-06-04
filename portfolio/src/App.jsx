@@ -55,10 +55,10 @@ function ProfileSection() {
             <p className="ps2-role">Web Developer</p>
             <div className="ps2-links">
                 <a href="https://github.com/GooseCodex" target="_blank" rel="noreferrer" className="ps2-link-btn">
-                    <span style={{ color: 'var(--ps2-square)' }}>□</span> GitHub
+                    <span style={{ color: 'var(--ps2-square)' }}>☐</span> GitHub
                 </a>
                 <a href="https://www.linkedin.com/in/guus-van-der-snel-631818266/" target="_blank" rel="noreferrer" className="ps2-link-btn">
-                    <span style={{ color: 'var(--ps2-square)' }}>□</span> LinkedIn
+                    <span style={{ color: 'var(--ps2-square)' }}>☐</span> LinkedIn
                 </a>
             </div>
         </div>
@@ -120,7 +120,7 @@ function WorksSection() {
                                 </a>
                             ) : (
                                 <span className="ps2-private-badge">
-                                    <span style={{ color: 'var(--ps2-circle)' }}>○</span> Private Repository
+                                    <span style={{ color: 'var(--ps2-circle)' }}>◯</span> Private Repository
                                 </span>
                             )
                         }
