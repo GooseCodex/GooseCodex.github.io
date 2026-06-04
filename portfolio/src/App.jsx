@@ -43,7 +43,7 @@ const projects = [
 
 const NAV_ITEMS = [
     { id: 'profile', label: 'PROFILE', symbol: '△', color: 'var(--ps2-triangle)' },
-    { id: 'works',   label: 'WORKS',   symbol: '○', color: 'var(--ps2-circle)'   },
+    { id: 'works',   label: 'WORKS',   symbol: '◯', color: 'var(--ps2-circle)'   },
     { id: 'contact', label: 'CONTACT', symbol: '✕', color: 'var(--ps2-cross)'    },
 ];
 
@@ -173,7 +173,9 @@ function App() {
                         onClick={() => setActive(id)}
                         style={{ '--sym-color': color }}
                     >
-                        <span className="ps2-dock-symbol">{symbol}</span>
+                        <span className={`ps2-dock-symbol${symbol === '◯' ? ' ps2-dock-symbol--circle' : ''}`}>
+                            {symbol}
+                        </span>
                         <span className="ps2-dock-label">{label}</span>
                     </button>
                 ))}

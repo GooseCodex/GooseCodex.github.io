@@ -446,11 +446,17 @@
 .ps2-private-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  background: rgba(20, 0, 40, 0.40);
+  border: 1px solid rgba(150, 60, 255, 0.12);
+  border-radius: 3px;
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.60rem;
+  font-size: 0.68rem;
   letter-spacing: 2px;
+  text-transform: uppercase;
   color: var(--ps2-text-dim);
+  opacity: 0.65;
 }
 
 /* ── Contact form heading (shared) ───────────────────────── */
@@ -588,9 +594,9 @@
   transition: filter 0.25s;
 }
 
-/* ○ renders visually larger than △ and ✕ — nudge it down to match */
-.ps2-dock-btn:nth-child(2) .ps2-dock-symbol {
-  font-size: 1.2rem;
+/* ○ renders ~20% wider than △ and ✕ at the same font-size */
+.ps2-dock-symbol--circle {
+  font-size: 1.3rem;
 }
 
 .ps2-dock-btn.active .ps2-dock-symbol {
@@ -625,8 +631,18 @@
   .ps2-form-row       { grid-template-columns: 1fr; }
 
   .ps2-dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     gap: 0.6rem;
     padding: 0.75rem 0.75rem 1rem;
+  }
+
+  /* Push content up so it doesn't hide behind the fixed dock */
+  .ps2-content-area {
+    padding-bottom: 85px;
   }
 
   .ps2-dock-btn {
@@ -635,11 +651,46 @@
     flex: 1;
   }
 
-  .ps2-dock-symbol    { font-size: 1.3rem; }
-  .ps2-dock-label     { font-size: 0.52rem; }
+  .ps2-dock-symbol            { font-size: 1.3rem; }
+  .ps2-dock-symbol--circle    { font-size: 1.05rem; }
+  .ps2-dock-label             { font-size: 0.52rem; }
 
   .ps2-submit-btn {
     align-self: stretch;
     justify-content: center;
+  }
+
+  /* ── Works tab mobile ── */
+  .ps2-works-area {
+    padding: 0.5rem 0 1.5rem;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .ps2-project-card {
+    padding: 1.2rem 1rem;
+  }
+
+  .ps2-project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .ps2-project-title {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  .ps2-project-desc {
+    font-size: 0.82rem;
+  }
+
+  .ps2-project-details li {
+    font-size: 0.78rem;
+  }
+
+  .ps2-gif-placeholder {
+    aspect-ratio: 4 / 3;
   }
 }
